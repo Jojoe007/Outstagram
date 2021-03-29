@@ -15,7 +15,8 @@ exports.protect = async (req, res, next) => {
         return next({
             message: "You need to be logged in to visit this route",
             statusCode: 403,
-        })
+            token: token,
+        });
     };
 
     try {

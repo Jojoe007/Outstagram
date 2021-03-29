@@ -49,7 +49,7 @@ exports.register = asyncHandler(async (req, res, next) => {
         email,
         password,
     });
-    const token = user.getJwtToken;
+    const token = user.getJwtToken();
 
     res.status(200).json({
         success: true,

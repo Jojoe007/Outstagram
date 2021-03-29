@@ -17,6 +17,12 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
     res.status(200).json({ success: true, data: users });
 });
 
+exports.getUser = asyncHandler(async (req, res, next) => {
+    let user = await UserModel.findById(req.body.id);
+
+    res.status(200).json({ success: true, data: user});
+});
+
 exports.editUser = asyncHandler(async (req, res, next) => {
     const { avatar, username, fullname, website, bio, email } = req.body;
 
